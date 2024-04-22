@@ -34,8 +34,9 @@ const Checkout = () => {
   const removeItem = (index: number, itemType: string) => {
     const updatedOrder = { ...order };
     let updatedAppettizerOrder = [...appettizerOrder];
-    let updatedBeverageOrder = [...beveregeOrder];
+    let updatedHamburgerOrder = [...hamburgerOrder];
     let updatedComboOrder = [...comboOrder];
+    let updatedBeveregeOrder = [...beveregeOrder];
     let updatedDessertOrder = [...dessertOrder];
 
     if (itemType === "appettizer") {
@@ -48,8 +49,8 @@ const Checkout = () => {
       updatedComboOrder = updatedComboOrder.filter((_, i) => i !== index);
       setComboOrder(updatedComboOrder);
     } else if (itemType === "beverege") {
-      updatedBeverageOrder = updatedBeverageOrder.filter((_, i) => i !== index);
-      setBeveregeOrder(updatedBeverageOrder);
+      updatedBeveregeOrder = updatedBeveregeOrder.filter((_, i) => i !== index);
+      setBeveregeOrder(updatedBeveregeOrder);
     } else if (itemType === "dessert") {
       updatedDessertOrder = updatedDessertOrder.filter((_, i) => i !== index);
       setDessertOrder(updatedDessertOrder);
@@ -122,7 +123,7 @@ const Checkout = () => {
           <Listselect onChange={(e) => setSelectedPaymentOption(e.target.value)}>
             <option value="">Selecione uma opção de pagamento</option>
             {products.map((paymentOption) => (
-              <option key={paymentOption.id} value={paymentOption.id}>
+              <option key={paymentOption.id} value={paymentOption.text}>
                 {paymentOption.text}
               </option>
             ))}

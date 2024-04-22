@@ -152,7 +152,7 @@ export default function Appetizers() {
                 </Button>
               </ProductCardContent>
 
-              <img src={product.image[0]} alt={product.title} />
+              <img src={product.image} alt={product.title} />
             </ProductCard>
           ))
         )}
